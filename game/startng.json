@@ -1,0 +1,11 @@
+{
+  "leaderboard": {
+    "stats": [
+      { "key": "distance", "label": "Distance (m)", "order": "highest" },
+      { "key": "coins", "label": "Coins", "order": "highest" },
+      { "key": "hurdles", "label": "Hurdles cleared", "order": "highest" },
+      { "key": "perfect", "label": "Perfect jumps", "order": "highest" },
+      { "key": "score", "label": "Score", "order": "highest" }
+    ]
+  }
+}

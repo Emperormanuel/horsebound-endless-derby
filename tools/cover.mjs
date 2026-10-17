@@ -1,0 +1,11 @@
+import { chromium } from '@playwright/test';
+import { copyFile,stat } from 'node:fs/promises';
+const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-webgl','--ignore-gpu-blocklist']});
+const page=await browser.newPage({viewport:{width:1600,height:1000}});
+await page.goto('http://127.0.0.1:4173/?cover&test');
+await page.waitForFunction(()=>!!window.__horsebound);
+await page.evaluate(()=>{window.__horsebound.world.camera.position.set(8,4.6,9);window.__horsebound.advance(1);});
+await page.screenshot({path:'game/cover.png'});
+await copyFile('game/cover.png','dist/cover.png');
+console.log('Cover size:',(await stat('game/cover.png')).size);
+await browser.close();

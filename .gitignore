@@ -1,0 +1,6 @@
+node_modules/
+test-results/
+reference-hangout.txt
+reference-character.txt
+startng-docs.md
+publication-status.json
